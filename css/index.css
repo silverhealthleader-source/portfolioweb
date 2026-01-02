@@ -1,0 +1,135 @@
+:root{
+  --bg: #efe6dd;
+  --ink: #1d1d1d;
+  --muted: #6b6b6b;
+  --frame: #e9dfd6;
+  --border: #b9b0a7;
+  --accent: #7b61ff;
+  --shadow: 0 10px 30px rgba(0,0,0,.08);
+  --radius: 14px;
+}
+
+*{ box-sizing: border-box; }
+html, body{ height: 100%; }
+body{
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans KR", Arial, "Apple SD Gothic Neo", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+/* Topbar */
+.topbar{ padding: 18px 28px 10px; }
+.nav{
+  display: flex;
+  gap: 26px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.nav__item{
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 14px;
+  letter-spacing: .2px;
+}
+.nav__item span{ color: var(--muted); font-weight: 600; margin: 0 6px; }
+.nav__item:hover{
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Frame */
+.wrap{ padding: 18px 28px 22px; }
+.frame{
+  background: var(--frame);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 22px;
+  min-height: 520px;
+}
+
+/* Left */
+.left{
+  padding: 18px 18px 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.brandTitle{
+  margin: 0;
+  font-size: clamp(48px, 5.8vw, 78px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+.tagline{
+  margin: 16px 0 0;
+  font-size: 16px;
+  line-height: 1.65;
+}
+.tagline strong{ font-weight: 900; }
+.spacer{ flex: 1; }
+
+/* Bottom-left logo link */
+.logoLink{
+  width: 46px;
+  height: 46px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.32);
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 900;
+  position: absolute;
+  left: 18px;
+  bottom: 14px;
+}
+.logoLink:hover{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(123,97,255,.12);
+}
+.logoImg{
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: block;
+}
+
+/* 이미지가 없을 때 텍스트로 대체 */
+.logoFallback{
+  font-size: 14px;
+  letter-spacing: .5px;
+}
+
+/* Right */
+.right{
+  background: #111824;
+  border-radius: 12px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.heroVideo{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.footer{
+  padding: 6px 28px 18px;
+  color: var(--muted);
+}
+
+@media (max-width: 900px){
+  .frame{ grid-template-columns: 1fr; }
+  .right{ min-height: 280px; }
+  .logoLink{ position: static; margin-top: 16px; }
+}

@@ -1,0 +1,21 @@
+@import url("./index.css");
+.nav__item.is-active{ text-decoration: underline; text-underline-offset: 6px; }
+.card{
+  background: rgba(255,255,255,.28);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.btn{
+  display: inline-block;
+  margin-top: 16px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 900;
+  border: 1px solid var(--border);
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.30);
+}
+.btn:hover{ border-color: var(--accent); }
